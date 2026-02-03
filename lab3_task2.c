@@ -44,6 +44,19 @@ int main(){
         else special_char = 1; // anything that is not a number of letter 
     }
 
+    // Now we must check that the password has these characters
+
+    if (!upper_case || !lower_case || !number_char)
+    {
+        printf("Please check your password. It must contain at least: \n");
+        printf("One upper case letter \n");
+        printf("One lower case letter \n");
+        printf("One number \n");
+    }
+
+    
+    
+
 
     
 
