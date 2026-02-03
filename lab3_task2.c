@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main(){
     char password_array[17]; // setting the password limit to 16 and adding 1 for '\0'
@@ -28,6 +29,25 @@ int main(){
     if (password_length < 8 || password_length > 16){
         printf("Password is invalid. Please use between 8 and 16 characters! \n");
     }
+
+    // This will check that the password has the right characters
+    int upper_case = 0;
+    int lower_case = 0;
+    int number_char = 0;
+    int special_char = 0;
+
+    for (int i = 0; i < password_length; i++)
+    {
+        if(isupper(password_array[i])) upper_case = 1; // checks if there is an upper case character in the array, makes upper_case variable 1
+        else if (islower(password_array[i])) lower_case = 1; // checks if there is a lower case character in the array, makes lower_case variable 1
+        else if (isdigit(password_array[i])) number_char = 1; // checks if there is number character in the array, makes number_char variable 1
+        else special_char = 1; // anything that is not a number of letter 
+    }
+
+
+    
+
+
 
 
 }
